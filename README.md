@@ -1,1 +1,1 @@
-# Problem-Solving
+#Problem solving : is the process of achieving a goal by overcoming obstacles, a frequent part of most activities. Problems in need of solutions range from simple personal tasks (e.g. how to turn on an appliance) to complex issues in business and technical fields.
