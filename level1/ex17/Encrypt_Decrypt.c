@@ -41,41 +41,42 @@ char *Read_string()
 
 	return (Name);
 }
-char *Encrypt_Name(char *Name)
+char *Encrypt_Name(char *Name, short encryptKey)
 {
 	int len = ft_strlen(Name);
 
 	for(int i = 0; i < len; i++)
 	{
-		Name[i] = Name[i] + 2;		
+		Name[i] = Name[i] + encryptKey;		
 	}
 
 	return (Name);
 }
-char *Decrypt_Name(char *str)
+char *Decrypt_Name(char *str, short encryptKey)
 {
 	int len = ft_strlen(str);
 
 	for(int i = 0; i < len; i++)
 	{
-		str[i] = str[i] - 2;
+		str[i] = str[i] - encryptKey;
 	}
 
 	return (str);
 }
-void Print_Result(char *Name)
+void Print_Result(char *Name, short encryptKey)
 {
 	printf("\nText Befor Incryption : %s\n", Name);
 	
-	Name = Encrypt_Name(Name);
+	Name = Encrypt_Name(Name, encryptKey);
 	printf("Text after Encryption : %s\n", Name);
 
-	Name = Decrypt_Name(Name);
+	Name = Decrypt_Name(Name, encryptKey);
 	printf("Text after Decryption : %s\n", Name);
 	
 }
 int main()
 {
-	Print_Result(Read_string());
+	short encryptKey = 3;
+	Print_Result(Read_string(), encryptKey);
 	return (0);
 }
