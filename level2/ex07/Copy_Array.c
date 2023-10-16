@@ -55,6 +55,8 @@ int *ft_Numcpy(int *dest, int *src)
 }
 int main()
 {
+	srand((unsigned)time(NULL));
+
 	int lenght = Read_Number();
 	int *Arr = Fill_Array_With_Random_Number(lenght);
 	printf("Array Elements : ");
