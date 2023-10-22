@@ -55,6 +55,8 @@ int Count_Negative_Numbers_In_Array(int *Arr, int lenght)
 }
 int main()
 {
+	srand((unsigned)time(NULL));
+
 	int lenght = Read_Number();
 	int *Arr = Fill_Array_With_Random_Number(lenght);
 	Print_Array(Arr, lenght);
