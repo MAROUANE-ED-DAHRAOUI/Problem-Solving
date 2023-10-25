@@ -70,7 +70,7 @@ void ChangeBackgroundColor(const char *color)
 void PrintWinner(const char *winnerColor, const char *winner)
 {
     ChangeBackgroundColor(winnerColor);
-    printf("Round Winner: %s\n", winner);
+    printf("%s\n", winner);
     printf(ANSI_COLOR_RESET);
 }
 void Play_Game(int Number)
@@ -111,17 +111,17 @@ void Play_Game(int Number)
         if (ComputerChoice == PlayerChoice)
         {
             DrawTime++;
-            PrintWinner(ANSI_COLOR_YELLOW, "No Winner");
+            PrintWinner(ANSI_COLOR_YELLOW, "Round Winner : No Winner");
         }
         else if ((ComputerChoice == 1 && PlayerChoice == 3) || (ComputerChoice == 2 && PlayerChoice == 1) || (ComputerChoice == 3 && PlayerChoice == 2))
         {
             CountComputer++;
-            PrintWinner(ANSI_COLOR_RED, "Computer");
+            PrintWinner(ANSI_COLOR_RED, "Round Winner : Computer");
         }
         else
         {
             CountPlayer++;
-            PrintWinner(ANSI_COLOR_GREEN, "Player1");
+            PrintWinner(ANSI_COLOR_GREEN, "Round Winner : Player1");
         }
     }
 
@@ -131,19 +131,19 @@ void Play_Game(int Number)
     printf("-----------------------------------------------------------------------\n");
     printf("\n---------------------------[Game Result]-----------------------------\n\n");
 
-    printf("Game Round: %d\nPlayer1 Won Times: %d\nComputer Won Times: %d\nDraw Times: %d\n", CountRound, CountPlayer, CountComputer, DrawTime);
+    printf("Game Round        : %d\nPlayer1 Won Times : %d\nComputer Won Times: %d\nDraw Times        : %d\n", CountRound, CountPlayer, CountComputer, DrawTime);
 
     if (CountPlayer > CountComputer)
     {
-        PrintWinner(ANSI_COLOR_GREEN, "Final Winner: Player1");
+        PrintWinner(ANSI_COLOR_GREEN, "Final Winner      : Player1");
     }
     else if (CountPlayer < CountComputer)
     {
-        PrintWinner(ANSI_COLOR_RED, "Final Winner: Computer");
+        PrintWinner(ANSI_COLOR_RED, "Final Winner      : Computer");
     }
     else
     {
-        PrintWinner(ANSI_COLOR_YELLOW, "Final Winner: No Winner");
+        PrintWinner(ANSI_COLOR_YELLOW, "Final Winner      : No Winner");
     }
 
     printf("---------------------------------------------------------------------------\n\n");
