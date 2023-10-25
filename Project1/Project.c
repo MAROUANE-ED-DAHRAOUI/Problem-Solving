@@ -126,27 +126,28 @@ void Play_Game(int Number)
     }
 
     printf(CLEAR_SCREEN);
-    printf("\n---------------------------------------------------------------------\n\n");
-    printf("                           +++  GAME OVER  +++                           \n");
-    printf("-----------------------------------------------------------------------\n");
-    printf("\n---------------------------[Game Result]-----------------------------\n\n");
+    printf("\n\t\t---------------------------------------------------------------------\n\n");
+    printf("\t\t                           +++  GAME OVER  +++                           \n");
+    printf("\t\t-----------------------------------------------------------------------\n");
+    printf("\n\t\t---------------------------[Game Result]-----------------------------\n\n");
 
-    printf("Game Round        : %d\nPlayer1 Won Times : %d\nComputer Won Times: %d\nDraw Times        : %d\n", CountRound, CountPlayer, CountComputer, DrawTime);
+    printf("\t\tGame Round        : %d\n\t\tPlayer1 Won Times : %d\n\t\tComputer Won Times: %d\n\t\tDraw Times        : %d\n",
+	 CountRound, CountPlayer, CountComputer, DrawTime);
 
     if (CountPlayer > CountComputer)
     {
-        PrintWinner(ANSI_COLOR_GREEN, "Final Winner      : Player1");
+        PrintWinner(ANSI_COLOR_GREEN, "\t\tFinal Winner      : Player1");
     }
     else if (CountPlayer < CountComputer)
     {
-        PrintWinner(ANSI_COLOR_RED, "Final Winner      : Computer");
+        PrintWinner(ANSI_COLOR_RED, "\t\tFinal Winner      : Computer");
     }
     else
     {
-        PrintWinner(ANSI_COLOR_YELLOW, "Final Winner      : No Winner");
+        PrintWinner(ANSI_COLOR_YELLOW, "\t\tFinal Winner      : No Winner");
     }
 
-    printf("---------------------------------------------------------------------------\n\n");
+    printf("\t\t---------------------------------------------------------------------------\n\n");
 }
 
 int main()
