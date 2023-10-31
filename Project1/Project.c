@@ -163,6 +163,6 @@ int main()
         Number = Read_Number_For_Round_Player();
         Play_Game(Number);
     }
-
+    printf(CLEAR_SCREEN);
     return 0;
 }
