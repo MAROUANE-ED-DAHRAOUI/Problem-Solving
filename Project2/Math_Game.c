@@ -342,6 +342,8 @@ void Print_Result(struct Count *Cnt)
 	if(Play_Again())
 	{
 		printf(CLEAR_SCREEN);
+		Cnt->RightAnswer = 0;
+        	Cnt->WorngAnswer = 0;
 		ChangeBackgroundColor(ANSI_COLOR_RESET);
 		Print_Result(Cnt);
 	}
