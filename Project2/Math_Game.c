@@ -173,7 +173,6 @@ void Check_OpType(int Nb1, int Nb2, enum enOperator Type, struct Count *Cnt)
 		case 5:
 			Check_OpType(Nb1, Nb2, Random_Number(1, 4), Cnt);
 		default:
-			printf("Invaled!!");
 			break;
 	}
 }
@@ -225,12 +224,12 @@ void Type_Question(int Type, int *Nb1, int *Nb2, int Num)
              Mix_Level(Num, Nb1, Nb2);
             break;
         default:
-            printf("Invalid Question Type\n");
+            break;
 	 }
 }
 void Header_Result(struct Count *Cnt)
 {
-	if(Cnt->RightAnswer > Cnt->WorngAnswer)
+	if(Cnt->RightAnswer >= Cnt->WorngAnswer)
 	{
 		printf(CLEAR_SCREEN);
 		ChangeBackgroundColor(ANSI_COLOR_GREEN);
@@ -238,21 +237,13 @@ void Header_Result(struct Count *Cnt)
                 printf("                                   Final Results is PASS          \n");
                 printf("\t\t\t------------------------------------------------\n");
 	}
-	else if(Cnt->RightAnswer < Cnt->WorngAnswer)
+	else
 	{
 		printf(CLEAR_SCREEN);
 		ChangeBackgroundColor(ANSI_COLOR_RED);
 		printf("\n\n\t\t\t------------------------------------------------\n");
                 printf("                                    Final Results is FAIL          \n");
                 printf("\t\t\t------------------------------------------------\n");
-	}
-	else
-	{
-		printf(CLEAR_SCREEN);
-		ChangeBackgroundColor(ANSI_COLOR_YELLOW);
-		printf("\n\n\t\t\t------------------------------------------------\n");
-                printf("                                     Final Results is DRAW          \n");
-                printf("\t\t\t------------------------------------------------\n\n");
 	}
 }
 void Print_level(int level)
